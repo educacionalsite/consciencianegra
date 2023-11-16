@@ -1,0 +1,98 @@
+/* style.css */
+
+
+header {
+    background-color: #1E272E; /* Cor de fundo para o cabeçalho */
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+main {
+    background-color: #fff; /* Cor de fundo para o conteúdo principal */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+footer {
+    background-color: #1E272E; /* Cor de fundo para o rodapé */
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.gallery {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.image-container a {
+    margin: 5px;
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    overflow: hidden;
+    width: calc(33.33% - 10px); /* Define a largura do contêiner de imagem com base no espaçamento desejado */
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+.image-container img:hover {
+    transform: scale(1.1);
+}
+
+/* Lightbox Styles */
+.lb-outerContainer {
+    max-width: 30% !important;
+}
+
+.lb-dataContainer {
+    max-width: 100% !important;
+}
+
+.lb-image {
+    width: auto;
+    height: auto;
+    max-height: 70vh; /* Ajuste conforme necessário para garantir uma boa experiência do usuário */
+}
+

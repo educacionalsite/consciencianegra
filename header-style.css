@@ -1,0 +1,40 @@
+
+/* header-style.css */
+
+/* Estilo específico para o cabeçalho */
+header {
+    background-image: url('consciencia.jpg'); /* Substitua pelo caminho da sua imagem */
+    background-size: cover; /* Garante que a imagem cubra todo o cabeçalho */
+    background-position: center; /* Centraliza a imagem */
+    padding: 4em 1em; /* Aumenta o padding para acomodar a imagem */
+    color: #fff; /* Cor do texto no cabeçalho */
+}
+
+h1 {
+    margin-bottom: 0.5em; /* Adiciona espaço abaixo do título */
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Estilize os botões de navegação no cabeçalho */
+.header-buttons {
+    display: flex;
+    justify-content: flex-end; /* Alinha os botões à direita */
+}
+
+.button {
+    display: inline-block;
+    padding: 10px;
+    margin-left: 10px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #2980b9;
+}

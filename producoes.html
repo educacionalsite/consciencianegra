@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="header-style.css">
+    <!-- Inclua a biblioteca Lightbox2 -->
+    <link rel="stylesheet" href="caminho/para/lightbox2/dist/css/lightbox.min.css">
+    <script src="caminho/para/lightbox2/dist/js/lightbox.min.js"></script>
+
+    <title>Produções - Consciência Negra</title>
+</head>
+<body>
+    <header>
+        <h1>Produções</h1>
+               <!-- Adicione esses botões -->
+
+        <nav>
+
+            <div class="header-buttons">
+                <a href="index.html" class="button">Página Principal</a>
+                <a href="producoes.html" class="button">Produções</a>
+                <a href="historico.html" class="button">Histórico</a>
+            </div>
+        </nav>
+    </header>
+        
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .catalogo {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .foto {
+            width: 150px;
+            height: 100px;
+            margin: 10px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .foto-expandida {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            display: none;
+        }
+
+        .foto-expandida img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+    </style>
+    <style>
+        .foto {
+            width: calc(20% - 20px);
+            height: 100px;
+            margin: 10px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .galeria {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+        }
+
+        .galeria img {
+            max-width: 100%;
+            max-height: 100px;
+            display: none;
+        }
+
+        .galeria img.ativo {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Catálogo de Fotos</h1>
+
+    <div class="catalogo">
+        <!-- Substitua os URLs das imagens pelos seus próprios URLs -->
+        <div class="foto" onclick="expandirImagem('mateus1.jpg')"><img src="mateus1.jpg" alt="Imagem 1"></div>
+        <div class="foto" onclick="expandirImagem('mateus2.jpg')"><img src="mateus2.jpg" alt="Imagem 2"></div>
+        <div class="foto" onclick="expandirImagem('Karen.png')"><img src="Karen.png" alt="Imagem 3"></div>
+        <div class="foto" onclick="expandirImagem('taynara.jpg')"><img src="taynara.jpg" alt="Imagem 4"></div>
+        <div class="foto" onclick="expandirImagem('felipe.jpg')"><img src="felipe.jpg" alt="Imagem 5"></div>
+        <div class="foto" onclick="expandirImagem('anajuliam.jpg')"><img src="anajuliam.jpg" alt="Imagem 6"></div>
+        <div class="foto" onclick="expandirImagem('eloisa.jpg')"><img src="eloisa.jpg" alt="Imagem 7"></div>
+        <div class="foto" onclick="expandirImagem('valduir.jpg')"><img src="valduir.jpg" alt="Imagem 8"></div>
+        <div class="foto" onclick="expandirImagem('elisson.jpg')"><img src="elisson.jpg" alt="Imagem 9"></div>
+        <div class="foto" onclick="expandirImagem('david.jpg')"><img src="david.jpg" alt="Imagem 10"></div>
+        <div class="foto" onclick="expandirImagem('witor.jpg')"><img src="witor.jpg" alt="Imagem 11"></div>
+        <div class="foto" onclick="expandirImagem('hugo.jpg')"><img src="hugo.jpg" alt="Imagem 12"></div>
+        <div class="foto" onclick="expandirImagem('gabriel.jpg')"><img src="gabriel.jpg" alt="Imagem 13"></div>
+        <div class="foto" onclick="expandirImagem('pedro.jpg')"><img src="pedro.jpg" alt="Imagem 14"></div>
+        <div class="foto" onclick="expandirImagem('milena.jpg')"><img src="milena.jpg" alt="Imagem 15"></div>
+        <div class="foto" onclick="expandirImagem('gabrielam.jpg')"><img src="gabrielam.jpg" alt="Imagem 16"></div>
+        <div class="foto" onclick="expandirImagem('eloisar.jpg')"><img src="eloisar.jpg" alt="Imagem 17"></div>
+        <div class="foto" onclick="expandirImagem('cindili.jpg')"><img src="cindili.jpg" alt="Imagem 18"></div>
+        <div class="foto" onclick="expandirImagem('kauan.jpg')"><img src="kauan.jpg" alt="Imagem 19"></div>
+        
+    </div>
+
+    <div class="foto-expandida" id="foto-expandida" onclick="fecharImagem()">
+        <img id="imagem-expandida" src="" alt="Imagem Expandida">
+    </div>
+
+    <script>
+        function expandirImagem(url) {
+            var fotoExpandida = document.getElementById('foto-expandida');
+            var imagemExpandida = document.getElementById('imagem-expandida');
+            imagemExpandida.src = url;
+            fotoExpandida.style.display = 'flex';
+        }
+
+        function fecharImagem() {
+            var fotoExpandida = document.getElementById('foto-expandida');
+            fotoExpandida.style.display = 'none';
+        }
+    </script>
+            <div class="catalogo"></div>
+             <div class="foto" onclick="expandirGaleria((['emanuel0.jpeg','emanuel1.jpeg','emanuel2.jpeg','emanuel3.jpeg','emanuel4.jpeg','emanuel5.jpeg', 'emanuel.jpeg'])"><img src="emanuel0.jpeg" alt="Imagem 20">
+        
+            <div class="galeria" id="galeria">
+
+            <div class="foto" onclick="expandirGaleria((['emanuel0.jpeg','emanuel1.jpeg','emanuel2.jpeg','emanuel3.jpeg','emanuel4.jpeg','emanuel5.jpeg', 'emanuel.jpeg'])"><img src="emanuel0.jpeg" alt="Imagem 20">
+    </div>
+    </div>
+
+    <script>
+        var galeriaIndex = 0;
+        var galeriaInterval;
+
+        function expandirGaleria(urls) {
+            var galeria = document.getElementById('galeria');
+            galeria.innerHTML = '';
+
+            urls.forEach(function(url, index) {
+                var img = document.createElement('img');
+                img.src = url;
+                img.classList.add(index === 0 ? 'ativo' : ''); // Adiciona a classe 'ativo' à primeira imagem
+                galeria.appendChild(img);
+            });
+
+            galeriaIndex = 0; // Reinicia o índice para a primeira imagem
+            exibirGaleria();
+
+            // Inicia o intervalo para trocar automaticamente as imagens a cada 3 segundos (3000 milissegundos)
+            galeriaInterval = setInterval(avancarGaleria, 3000);
+        }
+
+        function exibirGaleria() {
+            var imagens = document.querySelectorAll('.galeria img');
+            imagens.forEach(function(img, index) {
+                img.classList.toggle('ativo', index === galeriaIndex);
+            });
+        }
+
+        function avancarGaleria() {
+            var imagens = document.querySelectorAll('.galeria img');
+            if (galeriaIndex < imagens.length - 1) {
+                galeriaIndex++;
+            } else {
+                galeriaIndex = 0; // Volta para a primeira imagem se atingir o final da galeria
+            }
+            exibirGaleria();
+        }
+
+        function retrocederGaleria() {
+            if (galeriaIndex > 0) {
+                galeriaIndex--;
+            } else {
+                galeriaIndex = imagens.length - 1; // Vai para a última imagem se estiver na primeira
+            }
+            exibirGaleria();
+        }
+
+        function fecharImagem() {
+            var galeria = document.getElementById('galeria');
+            galeria.innerHTML = '';
+            galeria.style.display = 'none';
+
+            // Limpa o intervalo quando a galeria é fechada
+            clearInterval(galeriaInterval);
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2023 Consciência Negra</p>
+    </footer>
+</body>
+</html>
+
+<!-- Adicione esta configuração para a Lightbox no final do arquivo producoes.html ou em um arquivo JavaScript separado -->
+<script>
+    lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true
+    });
